@@ -1,7 +1,6 @@
 
 public class BankAccount {
 	
-	
 	private Customer customer;
 	private double balance;
 	private AccountType type;
@@ -28,12 +27,9 @@ public class BankAccount {
 		return this.type;
 	}
 	
-	
 	public void deposit(double amount)
 	{
-		this.balance=this.balance+amount;
-		
-		
+		this.balance=this.balance+amount;	
 	}
 	
 	public void withdrawal(double amount)
@@ -48,9 +44,7 @@ public class BankAccount {
 			{
 				System.out.println("Savings Withrawal Must be more than 1000");
 			}
-		}
-		
-		
+		}		
 	}
 	
 	private void transfer(double amount)
@@ -68,10 +62,6 @@ public class BankAccount {
 		else
 		{
 			System.out.println("Transfer Not Allowed");
-		}
-		
-	}
-	
-	
-
+		}		
+	}		
 }
