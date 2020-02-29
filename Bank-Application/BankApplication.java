@@ -11,7 +11,6 @@ public class BankApplication {
 	private HashMap<String, Customer> list;
 	private HashMap<Customer, List<BankAccount>> map; 
 	
-	
 	public BankApplication(HashMap<Customer, List<BankAccount>> map,HashMap<String, Customer> list)
 	{
 		
@@ -26,7 +25,6 @@ public class BankApplication {
 	
 	public void addAccount(BankAccount account)
 	{
-		
 		if(this.map.containsKey(account.getCustomer())==true)
 		{
 			if(this.map.get(account.getCustomer()).size()==2)
@@ -55,14 +53,11 @@ public class BankApplication {
 				{
 					this.map.get(account.getCustomer()).add(account);	
 				}
-			}
-			
-			
+			}			
 		}
 		else
 		{		
-			this.map.put(account.getCustomer(), new LinkedList<BankAccount>());
-			
+			this.map.put(account.getCustomer(), new LinkedList<BankAccount>());	
 			this.map.get(account.getCustomer()).add(account);
 		}
 	}
@@ -85,9 +80,6 @@ public class BankApplication {
 	
 	public void UI()
 	{
-		
-		
-		
 		int x=0;
 		int y=0;
 		
@@ -124,11 +116,9 @@ public class BankApplication {
 				while(y==0)
 				{
 					ID=generateID();
-					
-					
+									
 					if(this.list.containsKey(ID)==false)
-					{
-					
+					{	
 						this.list.put(ID, new Customer(ID,name,discount_factor));	
 						System.out.println("Your ID is "+ID);
 						break;
@@ -179,7 +169,6 @@ public class BankApplication {
 				System.out.println("(a) Checkings");
 				System.out.println("(b) Savings");
 
-				
 				input=scan.nextLine();
 				if(input.equals("a"))
 				{
@@ -189,7 +178,8 @@ public class BankApplication {
 					{
 						if(this.map.get(this.list.get(ID)).get(i).getType()==type)
 						{
-							System.out.println(this.map.get(this.list.get(ID)).get(i).getBalance());
+							System.out.println(this.map.get(
+								this.list.get(ID)).get(i).getBalance());
 						}
 					}
 					
@@ -202,7 +192,8 @@ public class BankApplication {
 					{
 						if(this.map.get(this.list.get(ID)).get(i).getType()==type)
 						{
-							System.out.println(this.map.get(this.list.get(ID)).get(i).getBalance());
+							System.out.println(
+								this.map.get(this.list.get(ID)).get(i).getBalance());
 						}
 					}
 				}
@@ -296,15 +287,15 @@ public class BankApplication {
 					{
 						if(this.map.get(this.list.get(ID)).get(i).getType()==type && i==0)
 						{
-							this.map.get(this.list.get(ID)).get(i).transfer(this.map.get(this.list.get(ID)).get(1),amount);
+							this.map.get(this.list.get(ID)).get(i).transfer(
+								this.map.get(this.list.get(ID)).get(1),amount);
 						}
 						if(this.map.get(this.list.get(ID)).get(i).getType()==type && i==1)
 						{
-							this.map.get(this.list.get(ID)).get(i).transfer(this.map.get(this.list.get(ID)).get(0),amount);
+							this.map.get(this.list.get(ID)).get(i).transfer(
+								this.map.get(this.list.get(ID)).get(0),amount);
 						}
-					}
-					
-					
+					}	
 				}
 				if(input.equals("b"))
 				{
@@ -314,16 +305,16 @@ public class BankApplication {
 					{
 						if(this.map.get(this.list.get(ID)).get(i).getType()==type && i==0)
 						{
-							this.map.get(this.list.get(ID)).get(i).transfer(this.map.get(this.list.get(ID)).get(1),amount);
+							this.map.get(this.list.get(ID)).get(i).transfer(
+								this.map.get(this.list.get(ID)).get(1),amount);
 						}
 						if(this.map.get(this.list.get(ID)).get(i).getType()==type && i==1)
 						{
-							this.map.get(this.list.get(ID)).get(i).transfer(this.map.get(this.list.get(ID)).get(0),amount);
+							this.map.get(this.list.get(ID)).get(i).transfer(
+								this.map.get(this.list.get(ID)).get(0),amount);
 						}
 					}
-				}
-				
-				
+				}		
 			}
 			else if(input.equals("g"))
 			{
@@ -333,29 +324,18 @@ public class BankApplication {
 			else
 			{
 				System.out.println("Please Enter Valid Option");
-			}	
-			
-			
-		}
-		
+			}				
+		}		
 	}
-	
 	
 	public static void main(String[] args)
 	{
 		HashMap<String, Customer> list= new HashMap<String, Customer>();
 		HashMap<Customer, List<BankAccount>> map= new HashMap<Customer, List<BankAccount>>();
-		
-		
+				
 		BankApplication application = new BankApplication(map,list);
 		
 		application.UI();
-		
-		
-		
-		
-		
-		
+						
 	}
-
 }
