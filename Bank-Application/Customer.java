@@ -9,8 +9,7 @@ public class Customer {
 	{
 		this.name=name;
 		this.ID=ID;
-		this.discount_percentage=discount_percentage;
-		
+		this.discount_percentage=discount_percentage;	
 	}
 	
 	public String getName()
@@ -26,7 +25,5 @@ public class Customer {
 	public double getDiscountFactor()
 	{
 		return this.discount_percentage;
-	}
-	
-	
+	}	
 }
