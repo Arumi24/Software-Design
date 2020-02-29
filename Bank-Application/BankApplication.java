@@ -74,7 +74,6 @@ public class BankApplication {
 			ID=ID+Integer.toString(randomInt);
 		}
 		
-		
 		return ID;
 	}
 	
