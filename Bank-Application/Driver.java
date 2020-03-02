@@ -27,8 +27,7 @@ public class Driver {
 			this.myStmt=this.myConn.createStatement();
 			String sql= "INSERT INTO Customer VALUES ('"+ID+"','"+Name+"',"+DiscountFactor+");";
 			System.out.println(sql);
-			myStmt.executeUpdate(sql);
-									
+			myStmt.executeUpdate(sql);								
 		}
 		catch(SQLException e)
 		{
@@ -43,8 +42,7 @@ public class Driver {
 			this.myStmt=this.myConn.createStatement();
 			String sql= "INSERT INTO Account VALUES ('"+ID+"',"+balance+",'"+type+"');";
 			System.out.println(sql);
-			myStmt.executeUpdate(sql);
-									
+			myStmt.executeUpdate(sql);									
 		}
 		catch(SQLException e)
 		{
@@ -184,7 +182,6 @@ public class Driver {
 	
 	public void printCustomers()
 	{
-
 		try
 		{
 			this.myStmt=this.myConn.createStatement();
@@ -200,8 +197,7 @@ public class Driver {
 		catch(SQLException e)
 		{
 			e.printStackTrace();
-		}    
-	   
+		}      
 	}
 	
 	public void deposit(String ID,double amount, String type)
@@ -211,13 +207,8 @@ public class Driver {
 			this.myStmt=this.myConn.createStatement();
 			String sql= "update Account set Balance=Balance+"+amount+" where ID="+ID+" and Type='"+type+"';";
 			System.out.println(sql);
-			myStmt.executeUpdate(sql);
-									
-		}
-			
-		
-		
-		
+			myStmt.executeUpdate(sql);									
+		}			
 		catch(SQLException e)
 		{
 			e.printStackTrace();
@@ -231,13 +222,11 @@ public class Driver {
 			this.myStmt=this.myConn.createStatement();
 			String sql= "update Account set Balance=Balance-"+amount+" where ID="+ID+" and Type='"+type+"';";
 			System.out.println(sql);
-			myStmt.executeUpdate(sql);
-									
+			myStmt.executeUpdate(sql);									
 		}
 		catch(SQLException e)
 		{
 			e.printStackTrace();
 		}
-	}
-	
+	}	
 }
